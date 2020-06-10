@@ -1,6 +1,7 @@
 module.exports = {
-  publicPath: 'https://audreychob.github.io/vue-app/'
+  outputDir: 'docs',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/vue-app/'
+    : '/'
 }
- 
-
 
