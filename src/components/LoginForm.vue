@@ -16,29 +16,39 @@
 </template>
 
 <script>
+
+  
+
+
+
 export default {
-  name: 'LoginForm',
-  props: {
-    msg: String
+
+    name: 'LoginForm',
+    props: {
+        msg: String
   },
   data(){
       return{
           formModel: {
-              login : "",
-              password: "",
-          }
-          
+              login : "admin",
+        password: "admin",
+    }
       }
+      
   },
-  methods: {
-      login() { 
-                if(this.formModel.username != "" && this.formModel.password != "") { 
-                     this.$emit("authenticated", true);
-                    this.$router.push({ name: 'Auth', query: { redirect: '/auth/#' } });
-                } else {
-                    console.log("Identifiant et mot de passe obligatoire");
-                }
+    methods: {
+        login() { 
+            if(this.formModel.username != "" && this.formModel.password != "") { 
+                this.$emit("allowAnonymous", true);
+                this.$router.push({ name: 'Auth', query: { redirect: '/auth/#' } });
             }
-  }
+            else {
+                console.log("Identifiant et mot de passe obligatoire");
+            }
+        }
+    }
 }
+
+
+  
 </script>
