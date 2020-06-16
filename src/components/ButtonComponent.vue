@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <button v-on:click="getInfos()"> Super Bouton </button>
-        <h3>{{"Nom du bouton : " + this.nom }}</h3>
+    <div >
+        <button :style="{'backgroundColor' : object.couleur}" > {{object.nom}} </button>
     </div>
 </template>
 
@@ -14,15 +13,21 @@ export default {
     data(){
         return{
             object: {
-                nom: "buttonTest",
+                nom: "Super Button",
                 couleur: "red",
             }
         }  
     },
     methods: {
-        getInfos(){
-            return "Nom du bouton : " + this.nom + ". Couleur du bouton : " + this.couleur;
+        backgroundColor(){
+            return this.object.couleur;
+            
         },
     }    
 }
 </script>
+<style scoped>
+    .red {
+        background-color: white;
+    }
+</style>
