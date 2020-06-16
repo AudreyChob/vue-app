@@ -38,6 +38,7 @@ const router = new VueRouter({
       name: 'Home',
       component: Home,
       
+      
     },
     {
       path: '/about',
@@ -51,12 +52,18 @@ const router = new VueRouter({
       path: '/auth',
       name: 'Auth',
       component: Auth,
-      meta: {
-        allowAnonymous: false
-      },
+      /* meta: {
+        allowAnonymous: true
+      }, */
       beforeEnter: (to, from, next) => {
-        if (!to.meta.allowAnonymous) next({ name: 'Auth' })
-        else next()
+        console.log("ok");
+        console.log(to.query)
+        //if (!to.meta.allowAnonymous) next({ name: 'Auth' })
+        if (to.query.login === "admin") next ()
+        /*else*/ //next()
+        else {
+          next("/")
+        }
       }
   
   }],

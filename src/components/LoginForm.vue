@@ -40,7 +40,8 @@ export default {
         login() { 
             if(this.formModel.username != "" && this.formModel.password != "") { 
                 this.$emit("allowAnonymous", true);
-                this.$router.push({ name: 'Auth', query: { redirect: '/auth/#' } });
+                this.$router.push({ name: 'Auth', query: { login : this.formModel.login,
+                 } });
             }
             else {
                 console.log("Identifiant et mot de passe obligatoire");
