@@ -32,9 +32,12 @@ const router = new VueRouter({
       beforeEnter: (to, from, next) => {
         console.log("ok");
         console.log(to.query)
-        if (to.query.login === "admin" && to.query.password === "admin") next ()
+        if (to.query.login === "admin" && to.query.password === "admin") next ();
+        else if (to.query.login === '' || to.query.password === ""){
+          alert("Login ou mot de passe manquant.");
+        }
         else {
-          alert ("Vous n'êtes pas connecté")
+          alert ("Erreur de l'authentification!")
           next("/")
         }
       }  

@@ -42,9 +42,6 @@ export default {
                         password : this.formModel.password,
                 } });
             }
-            else {
-                console.log("Identifiant et mot de passe obligatoire");
-            }
         }
     }
 }
