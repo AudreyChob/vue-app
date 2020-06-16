@@ -52,15 +52,14 @@ const router = new VueRouter({
       name: 'Auth',
       component: Auth,
       meta: {
-        allowAnonymous: true
+        allowAnonymous: false
       },
-      
-      
-  }],
-  beforeEnter: (to, from, next) => {
+      beforeEnter: (to, from, next) => {
         if (!to.meta.allowAnonymous) next({ name: 'Auth' })
         else next()
       }
+  
+  }],
 });
 
 export default router
