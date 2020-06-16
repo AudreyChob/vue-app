@@ -7,38 +7,14 @@ import Auth from '../views/Auth.vue'
 
 Vue.use(VueRouter)
 
-  //const routes = [
-  //{
-  //  path: '/',
-  //  name: 'Home',
-  //  component: Home
-  //},
-  //{
-  //  path: '/about',
-  //  name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-  //  component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  //},
-  //{
-  //  path: '/auth',
-  //  name: 'Auth',
-  //  component: Auth,
-  //  meta: {
-  //    allowAnonymous : true,
-  //  },
-  //},
-//]
+
 
 const router = new VueRouter({
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home,
-      
-      
+      component: Home,  
     },
     {
       path: '/about',
@@ -52,20 +28,16 @@ const router = new VueRouter({
       path: '/auth',
       name: 'Auth',
       component: Auth,
-      /* meta: {
-        allowAnonymous: true
-      }, */
+
       beforeEnter: (to, from, next) => {
         console.log("ok");
         console.log(to.query)
-        //if (!to.meta.allowAnonymous) next({ name: 'Auth' })
-        if (to.query.login === "admin") next ()
-        /*else*/ //next()
+        if (to.query.login === "admin" && to.query.password === "admin") next ()
         else {
+          alert ("Vous n'êtes pas connecté")
           next("/")
         }
-      }
-  
+      }  
   }],
 });
 

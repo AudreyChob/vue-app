@@ -17,31 +17,30 @@
 
 <script>
 
-  
-
-
-
 export default {
 
     name: 'LoginForm',
     props: {
         msg: String
-  },
-  data(){
-      return{
+    },
+    data(){
+        return{
           formModel: {
-              login : "admin",
-        password: "admin",
+            login : "admin",
+            password: "admin",
+        }
     }
-      }
       
-  },
+    },
     methods: {
         login() { 
             if(this.formModel.username != "" && this.formModel.password != "") { 
-                this.$emit("allowAnonymous", true);
-                this.$router.push({ name: 'Auth', query: { login : this.formModel.login,
-                 } });
+                this.$router.push({ 
+                    name: 'Auth', 
+                    query: { 
+                        login : this.formModel.login,
+                        password : this.formModel.password,
+                } });
             }
             else {
                 console.log("Identifiant et mot de passe obligatoire");

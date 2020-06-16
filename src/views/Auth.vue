@@ -1,6 +1,6 @@
 <template>
   <div class="auth">
-    <h1>Page de sécurité</h1>
+    <h1>Vous êtes connecté. Bienvenue</h1>
   </div>
 </template>
 
