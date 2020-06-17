@@ -1,6 +1,8 @@
 <template>
     <div >
-        <button :style="{'backgroundColor' : param.couleur, 'borderRadius' : border}" @click="updatecouleur" > {{param.nom}} </button>
+        <button :style="{'backgroundColor' : param.couleur}" @click="updatecouleur" > {{param.nom}} </button> <br>
+        <!-- <button :style="{'backgroundColor' : couleur}" @click="updatecouleur" > {{nom}} </button>  -->
+
     </div>
 </template>
 
@@ -10,7 +12,7 @@ export default {
     props: {
         /* nom: String,
         couleur: String,
-        border: String, */
+        border: String, */ 
         param: Object
     },
     data(){
@@ -23,9 +25,6 @@ export default {
             this.param.nom = "bleu";
             this.$emit("couleurupdated", this.param);
         },
-        changeBorder(){
-            
-        }
 
     }    
 }
@@ -33,6 +32,5 @@ export default {
 <style scoped>
     .red {
         background-color: white;
-
     }
 </style>

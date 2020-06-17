@@ -2,7 +2,8 @@
   <div class="auth">
     <h1>Vous êtes connecté.</h1>
     <ButtonComponent :param="param" @couleurupdated="test"/>
-    <ButtonComponent nom="Jaune" couleur="blue" @couleurupdated="$event"/>
+    <!-- si on utilise pas de méthode il est possible d'écrire du Js lors de l'appel exemple @couleurupdated="alert('ok')"-->
+    <!-- <ButtonComponent nom="Jaune" couleur="blue" @nomupdated="alert('ok')"/> -->
 
   </div>
 </template>
