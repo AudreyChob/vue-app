@@ -1,6 +1,6 @@
 <template>
     <div >
-        <button :style="{'backgroundColor' : object.couleur}" > {{object.nom}} </button>
+        <button   :style="{'backgroundColor' : couleur, 'borderRadius' : border}" > {{nom}} </button>
     </div>
 </template>
 
@@ -8,26 +8,22 @@
 export default {
     name: "ButtonComponent",
     props: {
-        msg: String
+        nom: String,
+        couleur: String,
+        border: Number,
     },
     data(){
         return{
-            object: {
-                nom: "Super Button",
-                couleur: "red",
-            }
         }  
     },
     methods: {
-        backgroundColor(){
-            return this.object.couleur;
-            
-        },
+       
     }    
 }
 </script>
 <style scoped>
     .red {
         background-color: white;
+
     }
 </style>

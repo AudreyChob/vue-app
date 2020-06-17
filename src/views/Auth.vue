@@ -1,7 +1,7 @@
 <template>
   <div class="auth">
     <h1>Vous êtes connecté.</h1>
-    <ButtonComponent/>
+    <ButtonComponent nom="Vert" couleur="red" />
 
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
   name: 'Auth',
   components:{
     ButtonComponent,
+  }, 
+  methods: {
+    
   }
 }
 </script>
