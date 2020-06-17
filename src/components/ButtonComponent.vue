@@ -1,6 +1,6 @@
 <template>
     <div >
-        <button   :style="{'backgroundColor' : couleur, 'borderRadius' : border}" > {{nom}} </button>
+        <button   :style="{'backgroundColor' : couleur, 'borderRadius' : border}" @click="updatecouleur" > {{nom}} </button>
     </div>
 </template>
 
@@ -17,7 +17,10 @@ export default {
         }  
     },
     methods: {
-       
+       updatecouleur: function() {
+      this.couleur = "yellow" ;
+      this.$emit("couleurupdated", this.couleur);
+        }
     }    
 }
 </script>
