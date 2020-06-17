@@ -1,7 +1,7 @@
 <template>
   <div class="auth">
     <h1>Vous êtes connecté.</h1>
-    <ButtonComponent nom="Vert" couleur="red" @couleurupdated="nom=$event"/>
+    <ButtonComponent nom="Vert" couleur="red" @couleurupdated="$event"/>
 
   </div>
 </template>

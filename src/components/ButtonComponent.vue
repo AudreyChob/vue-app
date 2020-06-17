@@ -10,17 +10,21 @@ export default {
     props: {
         nom: String,
         couleur: String,
-        border: Number,
+        border: String,
     },
     data(){
         return{
         }  
     },
     methods: {
-       updatecouleur: function() {
-      this.couleur = "yellow" ;
-      this.$emit("couleurupdated", this.couleur);
+        updatecouleur() {
+            this.couleur = "yellow" ;
+            this.$emit("couleurupdated", this.couleur);
+        },
+        changeBorder(){
+            
         }
+
     }    
 }
 </script>
