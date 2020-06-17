@@ -1,7 +1,8 @@
 <template>
   <div class="auth">
     <h1>Vous êtes connecté.</h1>
-    <ButtonComponent nom="Vert" couleur="red" @couleurupdated="$event"/>
+    <ButtonComponent :param="param" @couleurupdated="test"/>
+    <ButtonComponent nom="Jaune" couleur="blue" @couleurupdated="$event"/>
 
   </div>
 </template>
@@ -15,8 +16,18 @@ export default {
   components:{
     ButtonComponent,
   }, 
+  data(){
+    return{
+      param : {
+        nom :"confirmer",
+        couleur : "green"
+      }
+    }
+  },
   methods: {
-    
+    test(param){
+      alert('ok ' + param.couleur + param.nom)
+    }
   }
 }
 </script>

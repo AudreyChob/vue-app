@@ -1,6 +1,6 @@
 <template>
     <div >
-        <button   :style="{'backgroundColor' : couleur, 'borderRadius' : border}" @click="updatecouleur" > {{nom}} </button>
+        <button :style="{'backgroundColor' : param.couleur, 'borderRadius' : border}" @click="updatecouleur" > {{param.nom}} </button>
     </div>
 </template>
 
@@ -8,9 +8,10 @@
 export default {
     name: "ButtonComponent",
     props: {
-        nom: String,
+        /* nom: String,
         couleur: String,
-        border: String,
+        border: String, */
+        param: Object
     },
     data(){
         return{
@@ -18,8 +19,9 @@ export default {
     },
     methods: {
         updatecouleur() {
-            this.couleur = "yellow" ;
-            this.$emit("couleurupdated", this.couleur);
+            this.param.couleur = "yellow" ;
+            this.param.nom = "bleu";
+            this.$emit("couleurupdated", this.param);
         },
         changeBorder(){
             
