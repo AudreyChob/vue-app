@@ -3,7 +3,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? '/vue-app/'
     : '/',
-    pwa: {
-      themeColor: '#000',
-    },
+  pwa: {
+    themeColor: '#4da2ad',
+  },
 }
