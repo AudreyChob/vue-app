@@ -1,6 +1,6 @@
 <template>
-    <div>
-        
+    <div id="test">
+
 <v-multiselect-listbox :options="options"
                        :reduce-display-property="(option) => option.label"
                        :reduce-value-property="(option) => option.code">
@@ -14,24 +14,22 @@ export default {
     data() {
         return{
             options: [
-                {label: 'France', code: 'fr'},
-                {label: 'Allemagne', code: 'al'},
-                {label: 'Pologne', code: 'po'},
-                {label: 'Portugal', code: 'po'},
-                {label: 'Espagne', code: 'es'},
-                {label: 'Suisse', code: 'su'},
-                {label: 'Danemark', code: 'da'},
-                {label: 'Irlande', code: 'ir'},
-                {label: 'Ecosse', code: 'ec'},
-                {label: 'Royaume-uni', code: 'ro'},
-                {label: 'Croasie', code: 'cr'},
-                {label: 'Ukraine', code: 'uk'},
-                {label: 'Roumanie', code: 'ro'},
-                {label: 'Slovénie', code: 'sl'},
-                {label: 'Belgique', code: 'be'},
-                {label: 'Autriche', code: 'au'},
-
-
+                {label: 'Tomate', code: 'fruit'},
+                {label: 'Fraise', code: 'fruit'},
+                {label: 'Mangue', code: 'fruit'},
+                {label: 'Kiwi', code: 'fruit'},
+                {label: 'Haricot', code: 'legume'},
+                {label: 'Epinard', code: 'legume'},
+                {label: 'Poivron', code: 'legume'},
+                {label: 'Fromage', code: 'laitage'},
+                {label: 'Créme fraîche', code: 'laitage'},
+                {label: 'Sardine', code: 'poisson'},
+                {label: 'Turbo', code: 'poisson'},
+                {label: 'Pâtes', code: 'epicerie'},
+                {label: 'Semoule', code: 'epicerie'},
+                {label: 'Eau', code: 'boisson'},
+                {label: 'Biere', code: 'boisson'},
+                {label: 'Foin', code: 'autre'},
             ]
         }
         
