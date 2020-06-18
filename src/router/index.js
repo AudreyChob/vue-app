@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Auth from '../views/Auth.vue'
+import VueCardCarousel from '../views/vueCardCarousel'
 //import login from '../components/LoginForm'
 
 
@@ -24,7 +25,7 @@ const router = new VueRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     },
-  {
+    {
       path: '/auth',
       name: 'Auth',
       component: Auth,
@@ -40,8 +41,14 @@ const router = new VueRouter({
           alert ("Erreur de l'authentification!")
           next("/")
         }
-      }  
-  }],
+      } 
+    },
+    {
+      path: '/liste',
+      name: 'Liste',
+      component: VueCardCarousel,  
+    },
+  ],
 });
 
 export default router
