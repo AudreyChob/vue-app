@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Auth from '../views/Auth.vue'
 import VueCardCarousel from '../views/vueCardCarousel'
+import Test from '../views/test'
+
 //import login from '../components/LoginForm'
 
 
@@ -47,6 +49,11 @@ const router = new VueRouter({
       path: '/liste',
       name: 'Liste',
       component: VueCardCarousel,  
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test,  
     },
   ],
 });
